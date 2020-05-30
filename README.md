@@ -22,7 +22,7 @@ This project requires the following packages installed:
 
 A script to automatically install the required packages is available [here](https://github.com/danecode/lyit-ansible-project/blob/master/project_reqs.sh).
 
-The script with the following commmand in terminal:
+Run the script with the following commmand in terminal:
 ```
 sudo sh project_reqs.sh
 ```
