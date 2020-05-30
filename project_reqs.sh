@@ -1,7 +1,7 @@
 #!usr/bin/bash/
 
 # Bash script to install project requirements
-# Dane Coyle @danecode
+# Dane C. @danecode
 
 # Package list - OpenSSH, Ansible, Git
 PKG_LIST="openssh-server openssh-client ansible git"
