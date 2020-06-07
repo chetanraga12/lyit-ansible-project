@@ -4,7 +4,9 @@ Student Number: L00113796
 The purpose of this repository is to fulfill requirements for PLAC_CP802 as part of the BSc Computing DCM course with LYIT. Included here is all relevant information required to run the scripts associated with this project.
 
 ### Assigned Project
+```
 Using Ansible search all devices attached to the network, search for open ports on each device, attempt an ssh connection to switches/routers and download their config file.
+```
 
 I chose to execute this project using virtual machines, creating an Ansible-managed network of Lubuntu VMs. This setup consisted of installing required dependencies for the playbook to run correctly, and configuring SSH keys for Ansible to manage its inventory.
 
