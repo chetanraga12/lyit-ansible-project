@@ -39,5 +39,5 @@
     vyos_config:
       backup: yes
       backup_options:
-        filename: backup.cfg
+        filename: vyos_config.cfg
         dir_path: /tmp/routercfg
