@@ -1,0 +1,43 @@
+---
+# Scan open ports on network devices and download router configuration
+# Dane C. @danecode (LYIT student no. L00113796)
+# run with: ansible-playbook portscan.yml --ask-become-pass
+
+- name: Gather and list port facts
+  hosts: networkhosts
+  
+  tasks:
+  
+  - name: Gather 'apt' package manager facts
+    package_facts:
+      manager: apt
+  
+  - name: Install 'net-tools' if not present on managed system
+    apt:
+      name: net-tools
+      state: present
+    become: true
+    become_method: sudo
+    when: '"net-tools" not in ansible_facts.packages'
+  
+  - name: Gather port facts
+    listen_ports_facts:
+    
+  - name: Show all 'Listening' ports
+    debug:
+      msg:
+        - "Host: {{ inventory_hostname }}"
+        - "Listening TCP ports: {{ ansible_facts.tcp_listen | map(attribute='port') | sort | list | unique }}"
+        - "Listening UDP ports: {{ ansible_facts.udp_listen | map(attribute='port') | sort | list | unique }}"
+
+- name: Retrieve and save router configuration
+  hosts: router
+  
+  tasks:
+  
+  - name: Backup VyOS router configuration
+    vyos_config:
+      backup: yes
+      backup_options:
+        filename: backup.cfg
+        dir_path: /tmp/routercfg
