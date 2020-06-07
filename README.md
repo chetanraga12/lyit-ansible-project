@@ -10,7 +10,7 @@ I chose to execute this project using virtual machines, creating an Ansible-mana
 
 The home router available to me was unable to be used for this project. This necessitated the setup of a VyOS VM, configured to share the same network as the other VMs. While not actively routing anything on the network, it did meet the requirement for using an Ansible playbook to download router configurations.
 
-This pro
+A future version of this playbook may be updated to be platform-agnostic, but for now it can only be considered workable on Debian-based and VyOS systems.
 
 ## Project Requirements
 ### Virtualisation
@@ -40,4 +40,4 @@ Download the Ansible playbook [here](https://github.com/danecode/lyit-ansible-pr
 ```
 ansible-playbook portscan.yml --ask-become-pass
 ```
-The playbook will ask for the sudo password for the managed hosts. For compatibility, make sure this password is the same for all machines in listed in Ansible's inventory.
+The playbook will ask for the sudo password for the managed hosts. For compatibility, make sure this password is the same for all machines listed in Ansible's inventory.
