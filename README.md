@@ -28,7 +28,7 @@ This project requires the following packages installed:
 - python3-pip
 - paramiko
 
-#### Managed Hosts
+#### Managed Devices
 - openssh-server
 
 #### VyOS Router VM
