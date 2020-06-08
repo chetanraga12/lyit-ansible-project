@@ -1,0 +1,13 @@
+---
+- hosts: networkhosts
+  tasks:
+  - name: check port status
+    become: true
+    become_user: root
+    shell: netstat -tulpn | grep LISTEN
+    #shell: ss -tulpn | grep LISTEN
+    #shell: lsof -nP -iTCP -sTCP:LISTEN
+    #shell: lsof -i -n | egrep "(COMMAND|LISTEN|UDP|TCP)"
+    register: portstatus
+  - debug: var=portstatus.stdout
+  
