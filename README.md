@@ -22,13 +22,13 @@ All testing of this project took place using Hyper-V on Windows 10. Virtual mach
 ### Required Packages
 This project requires the following packages installed:
 
-#### Ansible Host
+#### Ansible Host VM
 - openssh-server
 - ansible
 - python3-pip
 - paramiko
 
-#### Managed Devices
+#### Managed Device VMs
 - openssh-server
 
 #### VyOS Router VM
